@@ -392,6 +392,13 @@ body {
     font-size: 1rem;
 }
 
+.btn-submit:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
 /* MENSAJE */
 .success-message {
     display: none;
