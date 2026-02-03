@@ -323,49 +323,118 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* FORMULARIO MÁS ANCHO Y PREMIUM */
+/* ===== FORMULARIO PROFESIONAL ===== */
+
+.section-form {
+    padding: 4rem 1.5rem;
+}
+
 .form-center {
     display: flex;
     justify-content: center;
-    padding: 2rem;
 }
 
-.contact-form {
+/* CARD FORM */
+.card-form {
     width: 100%;
-    max-width: 600px;
-    /* formulario más ancho */
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* TITULOS */
+.form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Merriweather', serif;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* INPUT GROUP */
+.input-group {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    gap: 0.4rem;
+    margin-bottom: 1.4rem;
 }
 
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* INPUTS */
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.2);
 }
 
 .contact-form textarea {
-    min-height: 140px;
+    min-height: 130px;
+    resize: none;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .cards-center {
-        flex-direction: column;
-        align-items: center;
+/* BOTON */
+.btn-submit {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* MENSAJE */
+.success-message {
+    display: none;
+    margin-top: 1.2rem;
+    background: #ecfdf3;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 480px) {
+
+    .card-form {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
     }
 
-    .contact-form {
-        max-width: 90%;
+    .form-title {
+        font-size: 1.6rem;
+    }
+
+    .form-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
     }
 }

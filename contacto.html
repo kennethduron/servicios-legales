@@ -48,20 +48,40 @@
         </div>
     </header>
 
-    <!-- FORMULARIO -->
-    <section class="section fade-in">
+    <section class="section fade-in section-form">
         <div class="form-center">
             <form id="contactForm" action="https://formspree.io/f/mblznzyy" method="POST"
-                class="contact-form card-glass">
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <textarea name="mensaje" placeholder="Describe brevemente tu caso" required></textarea>
-                <button type="submit" class="btn-primary btn-hover">Enviar Consulta</button>
-                <p id="formSuccess" class="success-message">Tu mensaje fue enviado correctamente. Me pondré en contacto
-                    contigo pronto.</p>
+                class="contact-form card-form">
+
+                <h2 class="form-title">Agenda tu consulta</h2>
+                <p class="form-subtitle">Atención confidencial y personalizada</p>
+
+                <div class="input-group">
+                    <label>Nombre completo</label>
+                    <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" placeholder="Describe brevemente tu caso" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit">
+                    Enviar Consulta
+                </button>
+
+                <p id="formSuccess" class="success-message">
+                    Tu mensaje fue enviado correctamente. Me pondré en contacto contigo pronto.
+                </p>
             </form>
         </div>
     </section>
+
 
     <footer class="footer">
         <p>© 2026 Abg. Sariah Rivera · Todos los derechos reservados</p>
