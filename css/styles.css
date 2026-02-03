@@ -67,19 +67,6 @@ body {
     cursor: pointer;
 }
 
-/* HERO */
-.premium-hero {
-    position: relative;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(0, 0, 0, 0.3)),
-        url('../pictures/law.jpg') center/cover no-repeat;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-}
-
 .hero-small {
     padding: 80px 20px;
 }
@@ -436,5 +423,50 @@ body {
     .contact-form input,
     .contact-form textarea {
         font-size: 0.9rem;
+    }
+}
+
+/* ===== HERO DESKTOP (DEFAULT) ===== */
+.premium-hero {
+    position: relative;
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.6),
+            rgba(0, 0, 0, 0.25)),
+        url('../pictures/sariah.jpg') center 20% / cover no-repeat;
+
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* ===== HERO MOBILE ===== */
+@media (max-width: 768px) {
+    .premium-hero {
+        background:
+            linear-gradient(180deg,
+                rgba(15, 23, 42, 0.55),
+                rgba(0, 0, 0, 0.35)),
+            url('../pictures/sariah1.jpg') center 10% / cover no-repeat;
+
+        height: 100vh;
+        padding: 0 1.2rem;
+    }
+}
+
+
+/* ===== HERO MOBILE PEQUEÑO (TELÉFONOS MUY CHICOS) ===== */
+@media (max-width: 480px) {
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .premium-hero {
+        background-position: center 5%;
     }
 }
