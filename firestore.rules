@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /admin_users/{username} {
+      allow get: if true;
+      allow list: if false;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    match /consultas/{document} {
+      allow create: if request.resource.data.keys().hasOnly([
+          "nombre",
+          "telefono",
+          "email",
+          "servicio",
+          "urgencia",
+          "canal",
+          "mensaje",
+          "consentimiento",
+          "estado",
+          "origen",
+          "notas",
+          "createdAt",
+          "updatedAt"
+        ])
+        && request.resource.data.nombre is string
+        && request.resource.data.nombre.size() > 1
+        && request.resource.data.telefono is string
+        && request.resource.data.telefono.size() > 5
+        && request.resource.data.servicio is string
+        && request.resource.data.servicio.size() > 1
+        && request.resource.data.urgencia in ["Alta", "Media", "Normal"]
+        && request.resource.data.canal in ["WhatsApp", "Llamada", "Correo"]
+        && request.resource.data.mensaje is string
+        && request.resource.data.mensaje.size() > 10
+        && request.resource.data.email is string
+        && request.resource.data.consentimiento == true
+        && request.resource.data.estado == "nuevo"
+        && request.resource.data.origen == "sitio-web"
+        && request.resource.data.notas == "";
+
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

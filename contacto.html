@@ -4,103 +4,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Contacto | Consulta Legal Profesional</title>
-
-    <!-- SEO -->
+    <title>Contacto Legal | Abg. Sariah Rivera</title>
     <meta name="description"
-        content="Agenda tu consulta legal profesional con atención confidencial. Contacto rápido y seguro.">
+        content="Contacta a la abogada Sariah Rivera y comparte tu consulta legal para recibir una atención clara, profesional y confidencial.">
     <meta name="keywords"
-        content="contacto abogada, consulta legal, asesoría legal, representación legal, servicios jurídicos">
+        content="contacto abogada, consulta legal, formulario legal, asesoría jurídica, abogada honduras">
     <meta name="author" content="Abg. Sariah Rivera">
     <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Contacto | Abogada Profesional">
-    <meta property="og:description" content="Agenda tu consulta legal profesional de manera rápida y segura.">
-    <meta property="og:image" content="https://kennethduron.github.io/servicios-legales/pictures/sariah.jpg?cache=2026">
-    <meta property="og:image:secure_url"
-        content="https://kennethduron.github.io/servicios-legales/pictures/sariah.jpg?cache=2026">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contacto Legal | Abg. Sariah Rivera">
+    <meta property="og:description"
+        content="Comparte tu consulta legal y recibe una atención profesional, ordenada y confidencial.">
+    <meta property="og:url" content="https://sariahrivera.web.app/contacto.html">
+    <meta property="og:site_name" content="Abg. Sariah Rivera">
+    <meta property="og:image" content="https://sariahrivera.web.app/pictures/sariah1.jpg">
+    <meta property="og:image:secure_url" content="https://sariahrivera.web.app/pictures/sariah1.jpg">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="716">
+    <meta property="og:image:height" content="1075">
+    <meta property="og:image:alt" content="Abg. Sariah Rivera firmando un documento en escritorio profesional.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contacto Legal | Abg. Sariah Rivera">
+    <meta name="twitter:description" content="Comparte tu consulta legal y recibe una atención profesional, ordenada y confidencial.">
+    <meta name="twitter:image" content="https://sariahrivera.web.app/pictures/sariah1.jpg">
+    <link rel="canonical" href="https://sariahrivera.web.app/contacto.html">
 
-
-    <!-- Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="./pictures/logo.jpg">
-
+    <link rel="icon" type="image/jpeg" href="./pictures/logo.jpg">
 </head>
 
 <body>
+    <div class="site-shell">
+        <nav class="navbar">
+            <a class="brand" href="index.html" aria-label="Ir al inicio">
+                <img src="./pictures/logo.jpg" alt="Logo de Abg. Sariah Rivera" class="brand-mark">
+                <span class="brand-copy">
+                    <strong>Abg. Sariah Rivera</strong>
+                    <small>Asesoría legal profesional</small>
+                </span>
+            </a>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">Abg. Sariah Rivera</div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <ul id="navMenu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html" class="active">Contacto</a></li>
-        </ul>
-    </nav>
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu">
+                &#9776;
+            </button>
 
-    <!-- HERO -->
-    <header class="hero hero-small premium-hero">
-        <div class="hero-content fade-in">
-            <h1>Contacto</h1>
-            <p>Tu información será tratada con absoluta confidencialidad</p>
-        </div>
-    </header>
+            <ul id="navMenu" class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <section class="section fade-in section-form">
-        <div class="form-center">
-            <form id="contactForm" action="https://formspree.io/f/mqelvkeb" method="POST"
-                class="contact-form card-form">
-
-                <h2 class="form-title">Agenda tu consulta</h2>
-                <p class="form-subtitle">Atención confidencial y personalizada</p>
-
-                <div class="input-group">
-                    <label>Nombre completo</label>
-                    <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" name="email" placeholder="correo@ejemplo.com" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Mensaje</label>
-                    <textarea name="mensaje" placeholder="Describe brevemente tu caso" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary btn-submit" style="cursor: pointer;">
-                    Enviar Consulta
-                </button>
-
-                <p id="formSuccess" class="success-message">
-                    Tu mensaje fue enviado correctamente. Me pondré en contacto contigo pronto.
+        <header class="hero hero-inner">
+            <div class="hero-backdrop"></div>
+            <div class="hero-inner-copy fade-in">
+                <span class="eyebrow">Consulta legal inicial</span>
+                <h1>Cuéntanos tu caso y recibe orientación clara desde el primer contacto.</h1>
+                <p>
+                    Puedes compartir la información esencial de tu situación para facilitar una valoración inicial más
+                    ordenada, profesional y confidencial.
                 </p>
-            </form>
-        </div>
-    </section>
+            </div>
+        </header>
 
+        <main>
+            <section class="section contact-layout">
+                <aside class="contact-sidebar fade-in">
+                    <span class="section-kicker">Canales directos</span>
+                    <h2>Canales directos para solicitar tu consulta legal</h2>
 
-    <footer class="footer">
-        <p>© 2026 Abg. Sariah Rivera · Todos los derechos reservados</p>
-    </footer>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-volume"></i>
+                        <div>
+                            <strong>Llamada directa</strong>
+                            <a href="tel:+50433262383">+504 3326-2383</a>
+                        </div>
+                    </div>
 
-    <!-- BOTONES FLOTANTES -->
-    <a href="https://wa.me/50433262383" class="float-whatsapp" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:+50433262383" class="float-call" aria-label="Llamar ahora">
-        <i class="fas fa-phone"></i>
-    </a>
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/50433262383?text=Hola%2C%20quiero%20compartir%20mi%20caso%20legal."
+                                target="_blank" rel="noreferrer">Enviar mensaje ahora</a>
+                        </div>
+                    </div>
 
+                    <div class="contact-card">
+                        <i class="fas fa-user-shield"></i>
+                        <div>
+                            <strong>Confidencialidad</strong>
+                            <p>La información inicial del caso debe manejarse con criterio y reserva.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-panel">
+                        <h3>Información útil para valorar tu consulta</h3>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check"></i> Un resumen claro de lo ocurrido</li>
+                            <li><i class="fas fa-check"></i> Qué servicio crees necesitar</li>
+                            <li><i class="fas fa-check"></i> Si el caso requiere atención urgente</li>
+                            <li><i class="fas fa-check"></i> Cómo prefieres que te contactemos</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <section class="form-shell fade-in">
+                    <form id="contactForm" class="contact-form card-form">
+                        <div class="form-heading">
+                            <span class="section-kicker">Solicitud de consulta</span>
+                            <h2>Comparte tu caso con la información esencial desde el inicio</h2>
+                            <p>
+                                La información enviada permite revisar tu situación con mayor contexto y responder de
+                                forma más clara y ordenada.
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <label class="input-group">
+                                <span>Nombre completo</span>
+                                <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+                            </label>
+
+                            <label class="input-group">
+                                <span>Teléfono</span>
+                                <input type="tel" name="telefono" placeholder="Ej. 9999-9999" required>
+                            </label>
+
+                            <label class="input-group">
+                                <span>Correo electrónico</span>
+                                <input type="email" name="email" placeholder="correo@ejemplo.com">
+                            </label>
+
+                            <label class="input-group">
+                                <span>Servicio de interés</span>
+                                <select name="servicio" id="serviceSelect" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Asesoría jurídica">Asesoría jurídica</option>
+                                    <option value="Representación legal">Representación legal</option>
+                                    <option value="Conciliación">Conciliación</option>
+                                    <option value="Evaluación inicial del caso">Evaluación inicial del caso</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </label>
+
+                            <label class="input-group">
+                                <span>Nivel de urgencia</span>
+                                <select name="urgencia" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Alta">Alta</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Normal">Normal</option>
+                                </select>
+                            </label>
+
+                            <label class="input-group">
+                                <span>Canal preferido</span>
+                                <select name="canal" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Llamada">Llamada</option>
+                                    <option value="Correo">Correo</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <label class="input-group">
+                            <span>Describe brevemente tu caso</span>
+                            <textarea name="mensaje" placeholder="Cuéntanos lo esencial para entender tu situación."
+                                required></textarea>
+                        </label>
+
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="consentimiento" required>
+                            <span>Autorizo el registro de mis datos para fines de contacto y seguimiento de esta consulta.</span>
+                        </label>
+
+                        <button type="submit" class="btn btn-primary btn-submit" id="submitButton">Enviar consulta</button>
+                        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </section>
+            </section>
+
+            <section class="section">
+                <div class="section-heading fade-in">
+                    <span class="section-kicker">Preguntas frecuentes</span>
+                    <h2>Preguntas frecuentes antes de realizar tu consulta</h2>
+                </div>
+
+                <div class="faq-grid">
+                    <article class="faq-card fade-in">
+                        <h3>¿Puedo escribir primero por WhatsApp?</h3>
+                        <p>Sí. Si lo prefieres, puedes escribir por WhatsApp antes de completar el formulario.</p>
+                    </article>
+                    <article class="faq-card fade-in">
+                        <h3>¿Qué información conviene compartir al inicio?</h3>
+                        <p>Es recomendable indicar el tipo de asunto, el nivel de urgencia y un resumen breve de lo ocurrido.</p>
+                    </article>
+                    <article class="faq-card fade-in">
+                        <h3>¿La información se maneja con confidencialidad?</h3>
+                        <p>La consulta inicial se recibe con reserva y criterio profesional, procurando un manejo responsable de los datos compartidos.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div>
+                <strong>Abg. Sariah Rivera</strong>
+                <p>Atención jurídica profesional, clara y confidencial.</p>
+            </div>
+            <div>
+                <a href="tel:+50433262383">+504 3326-2383</a>
+                <a href="https://wa.me/50433262383" target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+            <div>
+                <span>&copy; 2026 Todos los derechos reservados</span>
+            </div>
+        </footer>
+
+        <a href="https://wa.me/50433262383?text=Hola%2C%20quiero%20compartir%20mi%20caso%20legal."
+            class="float-whatsapp" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+50433262383" class="float-call" aria-label="Llamar ahora">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
     <script src="js/main.js"></script>
 </body>
 

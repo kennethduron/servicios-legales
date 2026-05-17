@@ -1,0 +1,9 @@
+# Firebase cache
+.firebase/
+
+# Git
+.git/
+.gitignore
+
+# Local notes
+FIREBASE_SETUP.md

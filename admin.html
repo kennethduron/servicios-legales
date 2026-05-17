@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Legal | Abg. Sariah Rivera</title>
+    <meta name="description"
+        content="Panel privado para administrar consultas legales, cambiar estados y dar seguimiento a clientes potenciales.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="./pictures/logo.jpg">
+</head>
+
+<body class="admin-body">
+    <main class="admin-wrap">
+        <section class="admin-topbar">
+            <div class="admin-title">
+                <span class="section-kicker">Panel privado</span>
+                <h1>CRM de consultas legales</h1>
+                <p>
+                    Este panel organiza los leads captados desde la página, permite iniciar sesión con usuario y
+                    contraseña usando Firebase y da seguimiento a cada consulta con estado y notas.
+                </p>
+            </div>
+            <a href="index.html" class="btn btn-muted">Volver al sitio</a>
+        </section>
+
+        <section class="crm-login" id="loginPanel">
+            <span class="section-kicker">Acceso restringido</span>
+            <h1>Ingresar al panel</h1>
+            <p class="crm-help">
+                Ingresa con usuario o correo y contraseña. Si usas un usuario, el panel buscará el correo asociado en
+                Firestore para iniciar sesión con Firebase.
+            </p>
+
+            <form id="loginForm">
+                <label class="input-group">
+                    <span>Usuario o correo</span>
+                    <input type="text" id="adminLogin" placeholder="usuario o admin@correo.com" autocomplete="username" required>
+                </label>
+                <label class="input-group">
+                    <span>Contraseña</span>
+                    <input type="password" id="adminPassword" placeholder="Tu contraseña" autocomplete="current-password" required>
+                </label>
+                <button type="submit" class="btn btn-primary">Entrar al CRM</button>
+                <p id="loginStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="crm-shell" id="crmPanel" hidden>
+            <div class="crm-toolbar">
+                <div>
+                    <span class="section-kicker">Seguimiento comercial</span>
+                    <p>Administra consultas nuevas, en proceso, en seguimiento o cerradas.</p>
+                </div>
+                <div class="crm-toolbar-actions">
+                    <button type="button" class="btn btn-muted" id="logoutButton">Cerrar sesión</button>
+                </div>
+            </div>
+
+            <div class="crm-notification-panel" id="notificationPanel" hidden>
+                <div>
+                    <span class="section-kicker">Notificaciones</span>
+                    <h3>Activa las notificaciones del CRM</h3>
+                    <p id="notificationPanelMessage">
+                        Recibe un aviso en esta pantalla y en tu navegador cuando entre una nueva solicitud.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-primary" id="notificationButton">Activar notificaciones</button>
+            </div>
+
+            <div class="crm-notice" id="crmNotice" hidden role="status" aria-live="polite"></div>
+
+            <div class="metric-grid">
+                <article class="metric-card">
+                    <i class="fas fa-inbox"></i>
+                    <span>Total de consultas</span>
+                    <strong id="metricTotal">0</strong>
+                </article>
+                <article class="metric-card">
+                    <i class="fas fa-bolt"></i>
+                    <span>Nuevas</span>
+                    <strong id="metricNew">0</strong>
+                </article>
+                <article class="metric-card">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>En proceso</span>
+                    <strong id="metricProgress">0</strong>
+                </article>
+                <article class="metric-card">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <span>Urgencia alta</span>
+                    <strong id="metricUrgent">0</strong>
+                </article>
+            </div>
+
+            <div class="crm-filter">
+                <label class="input-group">
+                    <span>Filtrar por estado</span>
+                    <select id="statusFilter">
+                        <option value="todos">Todos</option>
+                        <option value="nuevo">Nuevo</option>
+                        <option value="en-proceso">En proceso</option>
+                        <option value="seguimiento">Seguimiento</option>
+                        <option value="cerrado">Cerrado</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="lead-list" id="leadList"></div>
+            <div class="empty-state" id="emptyState" hidden>
+                <h3>No hay consultas para este filtro</h3>
+                <p>Cuando entren nuevos prospectos desde el formulario aparecerán aquí.</p>
+            </div>
+        </section>
+
+        <div class="confirm-modal" id="deleteModal" hidden aria-hidden="true">
+            <div class="confirm-modal-backdrop" data-close-delete-modal></div>
+            <div class="confirm-modal-card" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+                <p class="section-kicker">Confirmación</p>
+                <h2 id="deleteModalTitle">Eliminar solicitud</h2>
+                <p id="deleteModalMessage">
+                    Esta acción eliminará la solicitud seleccionada del CRM.
+                </p>
+                <div class="confirm-modal-actions">
+                    <button type="button" class="btn btn-muted" id="cancelDeleteButton">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/crm.js"></script>
+</body>
+
+</html>
